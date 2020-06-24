@@ -1,10 +1,9 @@
 <script>
   import globalStore from "../../stores/globalStore";
   import cart from "../../stores/cart";
-
-  $: total = $cart.reduce((acc,curr)=>{
-    return (acc += curr.amount)
-  },0)
+  $: total = $cart.reduce((acc, curr) => {
+    return (acc += curr.amount);
+  }, 0);
 </script>
 
 <!-- cart toggle -->

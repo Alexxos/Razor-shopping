@@ -1,25 +1,9 @@
 <script>
-  // import { onMount, onDestroy } from "svelte";
+  export let title = "";
+
   import products from "../../stores/defaultProducts";
   import Product from "./Product.svelte";
   import Loading from "../Loading.svelte";
-  export let title = "";
-
-  // let localProducts = [];
-  // let unsubscribe;
-
-  // onMount(()=> {
-  //   unsubscribe = products.subscribe(storeValue => {
-  //     localProducts = storeValue;
-  //   })
-  // })
-
-  // onDestroy(()=> {
-  //   unsubscribe()
-  // })
-
-  // console.log(products)
-  // console.log($products)
 </script>
 
 <section class="section">

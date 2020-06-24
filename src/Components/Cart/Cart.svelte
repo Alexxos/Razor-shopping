@@ -3,8 +3,7 @@
   import { fly, fade, blur } from "svelte/transition";
   import { link } from "svelte-routing";
   import ItemsList from "./ItemsList.svelte";
-  import user from '../../stores/user.js'
-
+  let user = false;
 </script>
 
 <div class="cart-overlay" transition:blur>
@@ -19,16 +18,16 @@
           }}>
           <i class="fas fa-window-close" />
         </button>
-        <h2 class="cart-title">Your bag</h2>
+        <h2 class="cart-title">your bag</h2>
         <span />
       </div>
-      <!--end cart header -->
-      <!--cart items -->
+      <!-- end cart header -->
+      <!-- cart items -->
       <ItemsList />
-      <!--end cart items -->
-      <!--cart footer -->
+      <!-- end of cart items -->
+      <!-- cart footer -->
       <div class="cart-footer">
-        {#if $user.jwt}
+        {#if user}
           <a
             href="/checkout"
             use:link
@@ -36,7 +35,7 @@
             on:click={() => {
               globalStore.toggleItem('cart', false);
             }}>
-            Checkout
+            checkout
           </a>
         {:else}
           <p class="cart-login">
@@ -52,7 +51,7 @@
           </p>
         {/if}
       </div>
-      <!--end cart footer -->
+      <!-- end of cart footer -->
     </div>
   </div>
 </div>

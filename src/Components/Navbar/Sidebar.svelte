@@ -3,7 +3,6 @@
   import { link } from "svelte-routing";
   import globalStore from "../../stores/globalStore";
   import { fly, fade } from "svelte/transition";
-  import Loginlink from "../LoginLink.svelte";
 </script>
 
 <div class="sidebar-container" transition:fly={{ x: -1000 }}>
@@ -18,8 +17,11 @@
         <i class="fas fa-window-close" />
       </button>
     </div>
-    <!-- side logo -->
-    <img src="/assets/images/logo.svg" alt="logo" class="logo sidebar-logo" />
+    <!-- site logo -->
+    <img
+      src="/assets/images/logo.svg"
+      class="logo sidebar-logo"
+      alt="razors logo" />
     <!-- links -->
     <ul class="sidebar-links">
       {#each links as sideLink}
@@ -34,9 +36,6 @@
           </a>
         </li>
       {/each}
-      <li>
-        <Loginlink />
-      </li>
     </ul>
   </div>
 </div>

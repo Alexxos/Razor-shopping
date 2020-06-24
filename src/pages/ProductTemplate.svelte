@@ -1,19 +1,19 @@
 <script>
   export let id;
   export let location;
+  import { addToCart } from "../stores/cart";
 
-  // global store
-  import {addToCart} from '../stores/cart'
   import products from "../stores/defaultProducts";
-  import Loading from "../Components/Loading.svelte";
+  import Loading from "../components/Loading.svelte";
   import { link } from "svelte-routing";
-  import globalStore from '../stores/globalStore.js'
+  import globalStore from "../stores/globalStore";
   $: product = $products.find(item => item.id === parseInt(id));
 </script>
 
 <svelte:head>
   <title>{!product ? 'single product' : product.title}</title>
 </svelte:head>
+
 {#if !product}
   <Loading />
 {:else}
@@ -32,9 +32,9 @@
         <button
           class="btn btn-primary btn-block"
           on:click={() => {
-            addToCart(product)
-    globalStore.toggleItem('cart', true) }
-  }>
+            addToCart(parseInt(id), product);
+            globalStore.toggleItem('cart', true);
+          }}>
           add to cart
         </button>
       </article>
