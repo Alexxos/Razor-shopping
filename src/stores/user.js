@@ -1,8 +1,5 @@
-import {writable} from 'svelte/store'
+import { writable } from 'svelte/store';
 
-const user = writable({
-  username: null,
-  jwt: null
-})
+const user = writable({ username: null, jwt: null });
 
 export default user;
