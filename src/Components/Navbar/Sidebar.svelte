@@ -37,7 +37,9 @@
           </a>
         </li>
       {/each}
-     
+      <!-- <li>
+        <LoginLink />
+      </li> -->
     </ul>
   </div>
 </div>
