@@ -9,12 +9,18 @@
   <a
     href="/"
     class="logout-btn"
-    on:click={()=>{
+    on:click={() => {
       logoutUser();
       globalStore.toggleItem('sidebar', false);
-      }}>
+    }}>
     logout
   </a>
 {:else}
-  <a href="/login" on:click={globalStore.toggleItem('sidebar', false)}>login</a>
+  <a
+    href="/login"
+    on:click={() => {
+      globalStore.toggleItem('sidebar', false);
+    }}>
+    login
+  </a>
 {/if}

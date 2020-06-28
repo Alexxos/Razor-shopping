@@ -12,8 +12,8 @@
   import Navbar from "./components/Navbar/Navbar.svelte";
   import Sidebar from "./components/Navbar/Sidebar.svelte";
   import Cart from "./components/Cart/Cart.svelte";
-  //alert
-  import Alert from './Components/Alert.svelte'
+  // alert
+  import Alert from "./components/Alert.svelte";
   // global store
   import globalStore from "./stores/globalStore";
 </script>
@@ -27,7 +27,7 @@
     <Cart />
   {/if}
   {#if $globalStore.alert}
-  <Alert />
+    <Alert />
   {/if}
   <Route path="/" component={Home} />
   <Route path="/about" component={About} />

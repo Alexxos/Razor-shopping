@@ -1,1 +1,1 @@
-export default 'https://svelte-store-server-alek.herokuapp.com'
+export default "https://svelte-store-server.herokuapp.com";

@@ -4,30 +4,28 @@
   import { onMount, onDestroy } from "svelte";
 
   const handleClose = () => {
-    globalStore.toggleItem('alert', false)
-};
-
-let timeout;
-onMount (()=>{
-timeout = setTimeout(()=>{
-globalStore.toggleItem('alert',false)
-},3000)
-})
-onDestroy(()=> {
-  clearTimeout(timeout)
-})
+    globalStore.toggleItem("alert", false);
+  };
+  let timeout;
+  onMount(() => {
+    timeout = setTimeout(() => {
+      globalStore.toggleItem("alert", false);
+    }, 3000);
+  });
+  onDestroy(() => {
+    clearTimeout(timeout);
+  });
 </script>
 
 <div
   class="alert-container"
   in:fly={{ y: -200, duration: 1000 }}
-  out:fly={{ duration: 0 }}
-  class:alert-danger={$globalStore.alertDanger}
-  >
+  out:fade={{ duration: 0 }}
+  class:alert-danger={$globalStore.alertDanger}>
   <div class="alert">
     <p>{$globalStore.alertText}</p>
-    <button on:click={handleClose} class='alert-close'>
-    <i class="fas fa-window-close"></i>
+    <button on:click={handleClose} class="alert-close">
+      <i class="fas fa-window-close" />
     </button>
   </div>
 </div>

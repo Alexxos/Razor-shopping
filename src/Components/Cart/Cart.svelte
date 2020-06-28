@@ -3,7 +3,7 @@
   import { fly, fade, blur } from "svelte/transition";
   import { link } from "svelte-routing";
   import ItemsList from "./ItemsList.svelte";
-  import user from '../../stores/user.js'
+  import user from "../../stores/user";
 </script>
 
 <div class="cart-overlay" transition:blur>
